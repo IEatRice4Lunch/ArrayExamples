@@ -38,11 +38,14 @@ class Main
          * Task 2.  Create a new array called ar2.
          *          Copy the elements of ar1 into ar2.
          */
+        int[] ar2 = ar1.clone();
         
         
         /* 
          * Task 3. Add 1 to each element in ar1.  Print it out below
          */
+        for(int i = 0; i<n; i++)
+            ar1[i] = ar1[i] + 1;
         
 
         
