@@ -144,6 +144,8 @@ class Main
                 k++;
             }
         }
+        for(int i = 0; i<k;i++)
+            System.out.println(ar2odds[i]);
         /*
          * Task 9. In the array ar2, count how many odd numbers you
          * have.  Then create an ew array called ar4.  Copy just the odd
@@ -155,6 +157,8 @@ class Main
             if(ar2[i]%2 ==1)
                 count++;
         int[] ar4 = new int[count];
+        for(int i= 0; i<ar4.length; i++)
+            System.out.println(ar4[i]);
         
         /*
          * Task 10.  Shift the elements of ar4 right by 1
@@ -162,12 +166,21 @@ class Main
          * old   ar4: 1 3 5 7 9
          * new   ar4  9 1 3 5 7
          */
-        
+        System.out.println("* * task 10 * *");
+        for(int i = 1; i<ar4.length-2; i++)
+            ar4[i] = ar4[i+1];
+        int temp = ar4[0];
+        ar4[0] = ar4[ar4.length-1];
+        ar4[ar4.length-1] = temp;
         
         /*
          * Task 11.  Reverse the order of elements in ar2
          */
-        
+        for(int i = 0; i<(ar2.length-1)/2;i++)
+        {
+            temp = ar2[i];
+            
+        }
         
         /*
          * Task 12: 
