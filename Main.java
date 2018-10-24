@@ -40,7 +40,8 @@ class Main
          */
         System.out.println("* * task 2 * *");
         int[] ar2 = ar1.clone();
-        
+        for(int i = 0; i<ar2.length; i++)
+            System.out.println(ar2[i]);
         
         /* 
          * Task 3. Add 1 to each element in ar1.  Print it out below
@@ -62,26 +63,33 @@ class Main
          *         ar3: 1 2 3 0 1 2 3
          */
         System.out.println("* * task 4 * *");
-        int[] ar3 = new int[n];
+        int[] ar3 = new int[n + ar1.length + 1];
         for(int i = 0; i<ar1.length;i++)
             ar3[i] = ar1[i];
-        for(int i = 0; i<ar1.length;i++)
-            ar3[i] = ar1[i+ar1.length];
-        
+        for(int i = 0; i<ar1.length-1;i++)
+            ar3[i+ar1.length] = ar1[i];
+        for(int i = 0; i< ar3.length;i++)
+            System.out.println(ar3[i]);
+       
         
         /*
          * Task 5.  Switch the first and last element of ar1.
          *          print out the new ar1.  Then switch them back
          */
-        System.out.println("* * task 5 * *");
-        int filler = ar1[0];
-        ar1[0] = ar1[n];
-        ar1[n] = filler;
-        for(int i = 0; i<ar1.length;i++)
-            System.out.println(ar1[i]);
-        filler = ar1[n];
-        ar1[0] = ar1[n];
-        ar1[n] = filler;
+        System.out.println("* * Task 5 * *");
+        // Ye olde switcheroo
+        int value;
+        value=ar1[0];
+        ar1[0]=ar1[ar1.length-1];
+        ar1[ar1.length-1]=value;
+        
+        for (int i=0 ; i<ar1.length ; i++)
+            System.out.println("ar1[" + i + "] = "+ar1[i]);
+        
+        // The Restoration of the rightful heir
+        value=ar1[0];
+        ar1[0]=ar1[ar1.length-1];
+        ar1[ar1.length-1]=value;
         /*
          * Task 6A. Print the 2nd to (n-1)th elements of ar1
          * 
@@ -94,7 +102,7 @@ class Main
         for(int i = 1; i<ar1.length-1;i++)
             System.out.println(ar1[i]);
         System.out.println("* * task 6b * *");
-        for(int i = 1; i<ar1.length+1;i+=2)
+        for(int i = 0; i<ar1.length;i+=2)
             System.out.println(ar1[i]);
         System.out.println("* * task 6c * *");
         for(int i = 0; i<ar1.length;i++)
@@ -157,8 +165,17 @@ class Main
             if(ar2[i]%2 ==1)
                 count++;
         int[] ar4 = new int[count];
-        for(int i= 0; i<ar4.length; i++)
-            System.out.println(ar4[i]);
+        k=0;
+        for (int i=0 ; i<ar2.length ; i++)
+        {
+             if (ar2[i]%2==1)
+             {
+                 ar4[k]=ar2[i];
+                 k++;
+             }
+         }
+        for (int i=0 ; i<k ; i++)
+             System.out.println(ar4[i]);
         
         /*
          * Task 10.  Shift the elements of ar4 right by 1
@@ -172,15 +189,21 @@ class Main
         int temp = ar4[0];
         ar4[0] = ar4[ar4.length-1];
         ar4[ar4.length-1] = temp;
+        for(int i = 0; i<ar4.length; i++)
+            System.out.println(ar4[i]);
         
         /*
          * Task 11.  Reverse the order of elements in ar2
          */
-        for(int i = 0; i<(ar2.length-1)/2;i++)
+        System.out.println("* * task 11 * *");
+        for(int i = 0; i<ar2.length/2;i++)
         {
             temp = ar2[i];
-            
+            ar2[i] = ar2[ar2.length-1-i];
+            ar2[ar2.length-1-i] = temp;
         }
+        for(int i=0 ; i<ar2.length; i++)
+            System.out.println(ar2[i]);
         
         /*
          * Task 12: 
@@ -205,7 +228,8 @@ class Main
          *  
          *  Count how many words have more than 5 letters.
          */
-        
+        System.out.println("* * task 12 * *");
+        String[] ar5 = new String[5];
         /*
          * Task 13
          * Create an array called monsterArray of 5 Monsters.
@@ -217,10 +241,19 @@ class Main
          * "Rosita"
          * 
          * Print out their names
-         * Use a for loop to print out the names of monster that start with
+         * Use a for loop to print out the names of monsters that start with
          * a vowel
          */
-        
+        System.out.println("* * task 13 * *");
+        String[] monsterArray = new String[5];
+        monsterArray[0] = "Cookie";
+        monsterArray[1] = "Grover";
+        monsterArray[2] = "Oscar the Grouch";
+        monsterArray[3] = "Elmo";
+        monsterArray[4] = "Rosita";
+        for(int i = 0; i<monsterArray.length;i++)
+            if(monsterArray[i].charAt(0) == 'a' || monsterArray[i].charAt(0) == 'e' || monsterArray[i].charAt(0) == 'i'|| monsterArray[i].charAt(0) == 'o' || monsterArray[i].charAt(0) == 'u')
+                System.out.println(monsterArray[i]); 
          /*
           * Task 14
           * Create an array of integers from 3 to 94 and call it arx
