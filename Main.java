@@ -300,6 +300,25 @@ class Main
           *      So arindex[0]=2
           *         arindex[1]=5
           */
+        System.out.println("* * task 14 * *");
+        int[] arx = new int[94-3+1];
+        int indexCount = 0;
+        for(int i =0; i<arx.length;i++){
+            arx[i] = 3+i;
+            if(arx[i]%3 == 0){
+                indexCount++;
+            }
+        }
+        int[] arindex = new int[indexCount];
+        int j = 0;
+        for(int i= 0; i<arindex.length;i++){
+            if(arx[i]%3 == 0){
+                arindex[j] = arx[i];
+                j++;
+            }
+        }
+        for(int i =0; i<indexCount;i++)
+            System.out.println(arindex[i]);
          /*
           * Create an arrary called "fb" and calculate the
           * first 10 fibonacci sequence.  You start with
